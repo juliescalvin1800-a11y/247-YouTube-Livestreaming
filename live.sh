@@ -7,7 +7,9 @@ PLAYLIST="playlist.txt"
 BACKGROUND="background.png"
 
 while true; do
-  shuf "$PLAYLIST" | while read -r AUDIO_URL; do
+  sort -R "$PLAYLIST" | while IFS= read -r AUDIO_URL; do
+    # Skip empty lines or broken URLs
+    [[ "$AUDIO_URL" != https://* ]] && continue
     echo "Now playing: $AUDIO_URL"
     ffmpeg \
       -loop 1 -framerate 1 -i "$BACKGROUND" \
