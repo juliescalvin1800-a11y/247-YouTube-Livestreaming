@@ -3,7 +3,6 @@
 # Tamil Christian Songs 24/7 YouTube Live Stream
 # Songs from: https://archive.org/details/09.-aaviai-malaipola
 
-STREAM_KEY="t0dj-9tz0-c117-wxjd-4z17"
 PLAYLIST="playlist.txt"
 BACKGROUND="background.png"
 
