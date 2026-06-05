@@ -5,7 +5,7 @@
 
 STREAM_KEY="t0dj-9tz0-c117-wxjd-4z17"
 PLAYLIST="playlist.txt"
-BACKGROUND="video.mp4"
+BACKGROUND="background.png"
 
 while true; do
   shuf "$PLAYLIST" | while read -r AUDIO_URL; do
