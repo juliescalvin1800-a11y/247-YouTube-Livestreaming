@@ -8,7 +8,6 @@ PLAYLIST="playlist.txt"
 BACKGROUND="video.mp4"
 
 while true; do
-  # Shuffle playlist each loop
   shuf "$PLAYLIST" | while read -r AUDIO_URL; do
     echo "Now playing: $AUDIO_URL"
     ffmpeg -re \
@@ -21,7 +20,7 @@ while true; do
            -tune zerolatency \
            -r 24 \
            -g 48 \
-           -s 854x480 \
+           -s 1280x720 \
            -b:v 800k \
            -maxrate 1000k \
            -bufsize 2000k \
