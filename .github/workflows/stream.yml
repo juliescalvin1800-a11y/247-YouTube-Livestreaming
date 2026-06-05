@@ -1,0 +1,27 @@
+name: Tamil Christian Songs 24/7 Live Stream
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */5 * * *'
+
+jobs:
+  stream:
+    runs-on: ubuntu-latest
+    timeout-minutes: 290
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install ffmpeg
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y ffmpeg
+
+      - name: Start Tamil Christian Songs Stream
+        env:
+          STREAM_KEY: ${{ secrets.STREAM_KEY }}
+        run: |
+          chmod +x live.sh
+          bash live.sh
